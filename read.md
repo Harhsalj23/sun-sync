@@ -8,6 +8,13 @@ It uses motors to tilt and turn the panels on two axes, following the sun as it 
 ![dacfc2b3-7b24-40c9-a224-18bd0a66410e](https://github.com/Harhsalj23/sun-sync/assets/148116081/7beba2aa-d663-4ee0-8246-334c2a49cd23)
 
 
+https://github.com/Harhsalj23/sun-sync/assets/148116081/188355f8-fab9-47b5-9d2a-da63759b5844
+
+
+
+
+
+
 ## Components
 - Servo Motors
 - Light emitting diodes(LDRs)
