@@ -16,6 +16,6 @@ It uses motors to tilt and turn the panels on two axes, following the sun as it 
 
 ## Authors
 - [Harshal Jaiswal](https://www.linkedin.com/in/Harshalj67)
-- Aryan Lashkari
+- [Aryan Lashkari](https://www.linkedin.com/in/aryan-lashkari-9b7040256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 - Banshita Rai
 - Sakshi Jha
