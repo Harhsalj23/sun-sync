@@ -1,1 +1,64 @@
+#include <ESP32Servo.h>
 
+Servo myservo1, myservo2;
+int LDR1 = 26, LDR2 = 27, LDR3 = 32, LDR4 = 33;
+int rRDL1 = 0, rRDL2 = 0, rRDL3 = 0, rRDL4 = 0;
+int min1=0, min2=0, min3=0;
+int ser1 = 80, ser2=0;
+
+void setup() {
+  myservo1.attach(4);
+  myservo2.attach(5);
+
+  Serial.begin(9600);
+  myservo1.write(ser1);
+  myservo2.write(100);
+}
+
+void loop() {
+
+  rRDL1 = analogRead(LDR1) / 100;
+  rRDL2 = analogRead(LDR2) / 100;
+  rRDL3 = analogRead(LDR3) / 100;
+  rRDL4 = analogRead(LDR4) / 100;
+
+  min1 = min(rRDL1, rRDL2);
+  min2 = min(rRDL3, rRDL4);
+  min3 = min(min1, min2);
+  
+  //Serial.println(String(min3));
+ // Serial.println(String(rRDL1) +", "+String(rRDL2) +", "+String(rRDL3) +", "+String(rRDL4));
+
+
+  if(rRDL1>min3 && rRDL2>min3)
+  {
+    if(ser1<140)
+      ser1+=1;
+    myservo1.write(ser1);
+  }
+  if(rRDL3>min3 && rRDL4>min3)
+  {
+    if(ser1>0)
+      ser1-=1;
+    myservo1.write(ser1);
+  }
+
+  if(rRDL2>min3 && rRDL3>min3)
+  {
+    Serial.println("servo2 +" + String(ser2));
+    if(ser2<180)
+      ser2+=1;
+    myservo2.write(ser2);
+  }
+  if(rRDL1>min3 && rRDL4>min3)
+  {
+    Serial.println("servo2 -" + String(ser2));
+    if(ser2>0)
+      ser2-=1;
+    myservo2.write(ser2);
+    
+  }
+  delay(15);
+
+ 
+}
